@@ -1,4 +1,4 @@
-const repository = require('../models/group-repository');
+const repository = require('../models/product-repository');
 
 module.exports = {
 
@@ -19,18 +19,18 @@ module.exports = {
 
     //Método que que chama uma inserção do registro no banco
     create: async (req, res) => {
-        const group = req.body;
+        const product = req.body;
 
         try {
 
             //Chamo a função insere o registro no banco de dados
-            const result = await repository.create(group);
+            const result = await repository.create(product);
 
-            //Pego o ID criado (em result[0]) e atribuo no group.id
-            group.id = result[0];
+            //Pego o ID criado (em result[0]) e atribuo no product.id
+            product.id = result[0];
 
             //Retorno o registro inserido (completo, com ID) com o status 201
-            res.status(201).json(group);
+            res.status(201).json(product);
             
             
         } catch (error) {
@@ -64,7 +64,7 @@ module.exports = {
     },
 
     update: async (req, res) => {
-        const group = req.body;
+        const product = req.body;
 
         try {
 
@@ -78,10 +78,10 @@ module.exports = {
             }
 
             //Se não entrou no IF acima, significa que encontrou o registro e pode ser alterado
-            await repository.update(group);
+            await repository.update(product);
 
             //Retorno o registro alterado
-            res.json(group);
+            res.json(product);
             
         } catch (error) {
             //Se der erro, retorna o erro com status 500
