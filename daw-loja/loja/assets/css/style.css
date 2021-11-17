@@ -21,6 +21,35 @@ header nav li {
     text-transform: uppercase;
 }
 
+#carousel .carousel-caption {
+    display: flex !important;
+    flex-direction: column;
+    align-items: start;
+    width: 450px;
+    bottom: 128px;
+  }
+  #carousel .carousel-caption h5,
+  #carousel .carousel-caption h4 {
+    text-transform: uppercase;
+    font-weight: 400;
+  }
+  #carousel .carousel-caption h4 {
+    font-size: 32px;
+  }
+  #carousel .carousel-caption h4 span {
+    color: #a237cc;
+  }
+  #carousel .carousel-caption .fw-light {
+    text-align: left;
+  }
+  #carousel .carousel-caption .btn-primary {
+    text-transform: uppercase;
+    font-weight: 400; 
+    background-color: #a237cc;
+    border-color: #a237cc;
+  
+  }
+
 .products,
 .collection {
     display: flex;
